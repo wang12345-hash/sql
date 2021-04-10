@@ -87,18 +87,19 @@ CREATE TABLE shopping_information(
 	eid INT PRIMARY KEY AUTO_INCREMENT,
 	ebox VARCHAR(20) NOT NULL,/*数码：内存，其他：尺寸*/
 	eprice DECIMAL(10,2) NOT NULL,/*价格：列如：9999.99*/
+	enub INT NOT NULL,/*库存*/
 	edid INT,
 	FOREIGN KEY(edid) REFERENCES shopping(did)
 );
 
 #插入数据到商城信息表
 INSERT INTO shopping_information VALUES
-(1,'128G','8699.99',1),
-(2,'256G','9599.00',1),
-(3,'160/76A/XS','1099.00',2),
-(4,'175/100A/L','1199.00',2),
-(6,'主8,副6~8','5279.00',3),
-(7,'8G','3899.00','4');
+(1,'128G','8699.99',10,1),
+(2,'256G','9599.00',6,1),
+(3,'160/76A/XS','1099.00',8,2),
+(4,'175/100A/L','1199.00',20,2),
+(6,'主8,副6~8','5279.00',100,3),
+(7,'8G','3899.00',66,'4');
 
 #创建音乐分类表
 CREATE TABLE music_type(
